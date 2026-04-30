@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parent
 MODEL_PATH = ROOT / "models" / "best.pt"
 MODEL_URL = "https://huggingface.co/DefendIntelligence/vessel-detection/resolve/main/models/best.pt"
 EXAMPLES_DIR = ROOT / "examples"
+MAIN_EXAMPLE_PATH = EXAMPLES_DIR / "example-00-multi-vessel-patch.png"
 MAX_TILES = 196
 BATCH_SIZE = 8
 
@@ -240,7 +241,11 @@ with gr.Blocks(title="Vessel Detection") as demo:
     )
     with gr.Row():
         with gr.Column(scale=1):
-            image_input = gr.Image(type="pil", label="Satellite image")
+            image_input = gr.Image(
+                value=str(MAIN_EXAMPLE_PATH) if MAIN_EXAMPLE_PATH.exists() else None,
+                type="pil",
+                label="Satellite image",
+            )
             confidence_input = gr.Slider(0.01, 0.95, value=0.20, step=0.01, label="Confidence threshold")
             iou_input = gr.Slider(0.05, 0.90, value=0.45, step=0.05, label="IoU NMS")
             tile_size_input = gr.Slider(320, 1024, value=640, step=32, label="Tile size")

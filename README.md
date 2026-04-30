@@ -7,11 +7,13 @@ pinned: false
 license: mit
 ---
 
-![Vessel Detection Gradio demo](assets/vessel-detection-demo.png)
+![Multi-vessel satellite patch with detections](assets/multi-vessel-patch-detections.png)
 
 # Vessel Detection
 
 Gradio Space for detecting vessels in satellite imagery with a fine-tuned YOLOv8 model.
+
+The main demo example is a multi-vessel satellite patch with 14 detections at the default confidence threshold.
 
 ## Links
 
