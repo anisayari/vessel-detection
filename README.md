@@ -7,6 +7,8 @@ pinned: false
 license: mit
 ---
 
+![Vessel Detection Gradio demo](assets/vessel-detection-demo.png)
+
 # Vessel Detection
 
 Gradio Space for detecting vessels in satellite imagery with a fine-tuned YOLOv8 model.
